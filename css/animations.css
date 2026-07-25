@@ -1,0 +1,21 @@
+@keyframes fadeIn{ from{ opacity:0;} to{ opacity:1;} }
+@keyframes slideUp{ from{ opacity:0; transform:translateY(10px);} to{ opacity:1; transform:translateY(0);} }
+@keyframes scaleIn{ from{ opacity:0; transform:scale(.96);} to{ opacity:1; transform:scale(1);} }
+@keyframes spin{ to{ transform:rotate(360deg); } }
+@keyframes pulseRing{ 0%{ box-shadow:0 0 0 0 rgba(41,83,228,.35);} 100%{ box-shadow:0 0 0 10px rgba(41,83,228,0);} }
+
+.spin{ animation:spin 1s linear infinite; }
+.fade-in{ animation:fadeIn .3s var(--ease); }
+.slide-up{ animation:slideUp .35s var(--ease); }
+.scale-in{ animation:scaleIn .2s var(--ease); }
+.stagger > *{ animation:slideUp .4s var(--ease) both; }
+.stagger > *:nth-child(1){ animation-delay:.02s; }
+.stagger > *:nth-child(2){ animation-delay:.06s; }
+.stagger > *:nth-child(3){ animation-delay:.10s; }
+.stagger > *:nth-child(4){ animation-delay:.14s; }
+.stagger > *:nth-child(5){ animation-delay:.18s; }
+.stagger > *:nth-child(6){ animation-delay:.22s; }
+
+.pulse-live{ animation:pulseRing 2s infinite; }
+
+.spinner{ width:16px; height:16px; border:2px solid rgba(0,0,0,.1); border-top-color:currentColor; border-radius:50%; animation:spin .7s linear infinite; }

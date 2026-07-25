@@ -1,0 +1,117 @@
+/* ===================================================================
+   PRACTICEFLOW — DESIGN TOKENS
+   A practice management platform for Australian accounting firms.
+
+   Palette
+   -------
+   --ink        #10233F  primary text / headings
+   --slate      #5B6B82  secondary text
+   --slate-300  #9AA7BA  tertiary text / placeholders
+   --cloud      #F4F6F9  app background
+   --surface    #FFFFFF  card / panel surface
+   --line       #E4E9F0  hairline borders
+   --line-soft  #EDF1F6  faint dividers
+   --signal     #2953E4  primary accent (Signal Blue)
+   --signal-600 #1F42BE  primary accent, pressed
+   --signal-100 #E8EDFC  primary accent, tint
+   --ledger     #0F9D77  success / lodged / positive (Ledger Green)
+   --ledger-100 #E4F6EF
+   --amber      #C9820A  attention / waiting (Flag Amber)
+   --amber-100  #FBF0DC
+   --coral      #D6483F  overdue / danger (Alert Coral)
+   --coral-100  #FBE9E7
+   --violet     #6E56CF  review / partner stage
+   --violet-100 #EFEAFB
+
+   Type
+   ----
+   Display : "Fraunces"      — editorial serif, used sparingly for hero numbers & headlines
+   UI      : "Inter"         — interface, body, tables
+   Mono    : "IBM Plex Mono" — figures, currency, IDs, timers
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root{
+  --ink:#10233F;
+  --ink-70: rgba(16,35,63,.7);
+  --slate:#5B6B82;
+  --slate-300:#9AA7BA;
+  --cloud:#F4F6F9;
+  --surface:#FFFFFF;
+  --line:#E4E9F0;
+  --line-soft:#EDF1F6;
+
+  --signal:#2953E4;
+  --signal-600:#1F42BE;
+  --signal-100:#E8EDFC;
+  --signal-50:#F4F7FF;
+
+  --ledger:#0F9D77;
+  --ledger-100:#E4F6EF;
+
+  --amber:#C9820A;
+  --amber-100:#FBF0DC;
+
+  --coral:#D6483F;
+  --coral-100:#FBE9E7;
+
+  --violet:#6E56CF;
+  --violet-100:#EFEAFB;
+
+  --font-display:'Fraunces', ui-serif, Georgia, serif;
+  --font-ui:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --radius-sm:8px;
+  --radius-md:12px;
+  --radius-lg:18px;
+  --radius-xl:26px;
+
+  --shadow-sm: 0 1px 2px rgba(16,35,63,.06);
+  --shadow-md: 0 6px 20px rgba(16,35,63,.08);
+  --shadow-lg: 0 20px 48px rgba(16,35,63,.14);
+  --shadow-ring: 0 0 0 3px var(--signal-100);
+
+  --ease: cubic-bezier(.2,.7,.3,1);
+  --sidebar-w: 264px;
+  --sidebar-w-collapsed: 76px;
+  --topbar-h: 64px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family:var(--font-ui);
+  color:var(--ink);
+  background:var(--cloud);
+  -webkit-font-smoothing:antialiased;
+  font-size:14px;
+  line-height:1.5;
+}
+h1,h2,h3,h4{ margin:0; font-family:var(--font-display); font-weight:600; letter-spacing:-.01em; }
+p{ margin:0; }
+a{ color:inherit; text-decoration:none; }
+button{ font-family:inherit; }
+ul{ list-style:none; margin:0; padding:0; }
+input,select,textarea,button{ font-family:inherit; font-size:inherit; color:inherit; }
+::selection{ background:var(--signal-100); color:var(--signal-600); }
+
+/* scrollbars */
+*{ scrollbar-width:thin; scrollbar-color:var(--slate-300) transparent; }
+::-webkit-scrollbar{ width:8px; height:8px; }
+::-webkit-scrollbar-thumb{ background:#CBD5E3; border-radius:8px; }
+::-webkit-scrollbar-thumb:hover{ background:var(--slate-300); }
+::-webkit-scrollbar-track{ background:transparent; }
+
+.mono{ font-family:var(--font-mono); font-variant-numeric:tabular-nums; }
+.text-slate{ color:var(--slate); }
+.text-slate-300{ color:var(--slate-300); }
+.sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+
+:focus-visible{ outline:2px solid var(--signal); outline-offset:2px; border-radius:6px; }
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+}
